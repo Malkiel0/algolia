@@ -1,20 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="https://www.algolia.com/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#5468FF" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Cours interactif sur l'intégration d'Algolia avec Laravel 12"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="https://www.algolia.com/algoliaweb-static-favicons/apple-touch-icon.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animations CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
+    <!-- Lottie Animations -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- AOS Animation on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Particules JS pour effets visuels -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Configuration Tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'algolia-blue': '#5468FF',
+              'magic-purple': '#8E43E7',
+              'magic-green': '#00A98F',
+              'magic-yellow': '#FFC168'
+            },
+            animation: {
+              'spin-slow': 'spin 3s linear infinite',
+              'bounce-slow': 'bounce 3s infinite',
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'slide-in': 'slideIn 1s ease-out',
+              'zoom-in': 'zoomIn 0.5s ease-out',
+              'wiggle': 'wiggle 1s ease-in-out infinite',
+              'tada': 'tada 1s ease-in-out',
+              'jello': 'jello 1s ease-in-out',
+              'heartbeat': 'heartbeat 1.5s ease-in-out infinite'
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' }
+              },
+              slideIn: {
+                '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                '100%': { transform: 'translateX(0)', opacity: '1' }
+              },
+              zoomIn: {
+                '0%': { transform: 'scale(0.5)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' }
+              },
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' }
+              },
+              tada: {
+                '0%': { transform: 'scale(1)' },
+                '10%, 20%': { transform: 'scale(0.9) rotate(-3deg)' },
+                '30%, 50%, 70%, 90%': { transform: 'scale(1.1) rotate(3deg)' },
+                '40%, 60%, 80%': { transform: 'scale(1.1) rotate(-3deg)' },
+                '100%': { transform: 'scale(1) rotate(0)' }
+              },
+              jello: {
+                '0%, 100%': { transform: 'skewX(0) skewY(0)' },
+                '22.5%': { transform: 'skewX(-12.5deg) skewY(-12.5deg)' },
+                '33.3%': { transform: 'skewX(6.25deg) skewY(6.25deg)' },
+                '44.4%': { transform: 'skewX(-3.125deg) skewY(-3.125deg)' },
+                '55.5%': { transform: 'skewX(1.5625deg) skewY(1.5625deg)' },
+                '66.6%': { transform: 'skewX(-0.78125deg) skewY(-0.78125deg)' },
+                '77.7%': { transform: 'skewX(0.390625deg) skewY(0.390625deg)' },
+                '88.8%': { transform: 'skewX(-0.1953125deg) skewY(-0.1953125deg)' }
+              },
+              heartbeat: {
+                '0%': { transform: 'scale(1)' },
+                '14%': { transform: 'scale(1.3)' },
+                '28%': { transform: 'scale(1)' },
+                '42%': { transform: 'scale(1.3)' },
+                '70%': { transform: 'scale(1)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
