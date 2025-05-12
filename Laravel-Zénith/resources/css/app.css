@@ -1,0 +1,41 @@
+/*
+    Fichier principal Tailwind CSS pour Digit All
+    - Utilise @tailwind base, components, utilities
+    - Styles custom pour l'identité visuelle
+*/
+
+/* Configuration de Tailwind pour utiliser la palette personnalisée et ajouter des styles utilitaires pour le dashboard Digit All */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Palette personnalisée Digit All */
+:root {
+    --digitall-orange: #FFA726;
+    --digitall-blue: #1A1333;
+    --digitall-light: #F8F9FB;
+    --digitall-white: #FFFFFF;
+}
+
+/* Style global pour le dashboard Digit All */
+body {
+    background-color: var(--digitall-light);
+    color: var(--digitall-blue);
+    font-family: 'Instrument Sans', sans-serif;
+}
+
+/* Animation fade-in pour les composants */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Styles custom pour l'identité visuelle */
+:root {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
